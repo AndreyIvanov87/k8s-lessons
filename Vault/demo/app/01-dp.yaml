@@ -53,7 +53,7 @@ spec:
             - mountPath: /app/config
               name: approle-config
         - name: go-vault-approle
-          image: registry.gitlab.com/k11s-os/vault-approle-auth:cc849c81
+          image: registry.gitlab.com/k11s-os/vault-approle-auth:718a4c6c
           imagePullPolicy: IfNotPresent
           securityContext:
             runAsUser: 10001
@@ -73,6 +73,8 @@ spec:
               value: /app/config/unwrapped_token
             - name: APPROLE_VAULT_ADDR
               value: http://vault:8200
+            - name: APPROLE_SECRET_PATH
+              value: secrets/data/k11s/demo/app/service
           command:
             - /app/vaultauth
           volumeMounts:
