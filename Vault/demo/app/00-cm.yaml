@@ -12,13 +12,12 @@ data:
       method "approle" {
         config = {
           role_id_file_path = "/etc/vault/config/app-role-id"
-          secret_id_response_wrapping_path = "auth/approle/role/my-app-role/role-id"
         }
       }
 
       sink {
           type = "file"
-          wrap_ttl = "30m"
+          wrap_ttl = "3m"
           config = {
             path = "/etc/vault/config/approle/wrapped_token"
             mode = 0777

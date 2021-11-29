@@ -17,8 +17,6 @@ spec:
         role: vault-approle-demo
     spec:
       shareProcessNamespace: true
-      imagePullSecrets:
-        - name: nexus.ebsbio.tech-registry-secret
       initContainers:
         - name: init-app-config
           image: vault:1.9.0
