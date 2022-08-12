@@ -78,8 +78,8 @@ spec:
   - image: busybox
     name: busybox
     args:
-    - sleep
-    - "3600"
+      - sleep
+      - "3600"
     securityContext:
       privileged: true
 ```
@@ -95,7 +95,7 @@ kubectl exec privilegedpod -it -- ls /dev
 
 ## Demo 3
 
-Создайте модуль с контекстами безопасности, установленными как в поде, так и в контейнере.
+Создайте манифест с контекстами безопасности, установленными как в поде, так и в контейнере.
 
 ```
 apiVersion: v1
@@ -206,7 +206,7 @@ spec:
 ```
 
 ```
-kubectl exec -it flask-cap bash
+kubectl exec -it bbox-cap bash
 ```
 
 Убедитесь, что возможности удалены
