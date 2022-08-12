@@ -35,8 +35,8 @@ spec:
           securityContext:
             capabilities:
               add:
-                - IPC_LOCK
-                - CAP_SETFCAP
+                - IPC_LOCK # разрешает делать системный вызов mlock без повышения привилегий контейнера, выделение памяти большими страницами
+                - CAP_SETFCAP # нужно для мапинга юзер ид0 в нового пользака в неймпейсе ядра, вызов setcap
           volumeMounts:
             - name: config
               mountPath: /etc/vault/config
