@@ -191,12 +191,12 @@ ls -ltra test
 apiVersion: v1
 kind: Pod
 metadata:
-  name: flask-cap
+  name: bbox-cap
   namespace: default
 spec:
   containers:
-  - image: mateobur/flask
-    name: flask-cap
+  - image: gcr.io/google-samples/node-hello:1.0
+    name: bbox-cap
     securityContext:
       capabilities:
         drop:
