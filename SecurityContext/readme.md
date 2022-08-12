@@ -192,7 +192,6 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: bbox-cap
-  namespace: default
 spec:
   containers:
   - image: gcr.io/google-samples/node-hello:1.0
